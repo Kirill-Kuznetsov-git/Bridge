@@ -2,7 +2,7 @@ import { ethers } from "hardhat";
 
 async function main() {
   const bridgeFactory = await ethers.getContractFactory("Bridge");
-  const bridge = await bridgeFactory.deploy();
+  const bridge = await bridgeFactory.deploy(process.env.TEST_TOKEN_ADDRESS as string);
 
   await bridge.deployed();
 

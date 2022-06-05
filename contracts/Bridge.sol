@@ -3,7 +3,6 @@ pragma solidity ^0.8.0;
 
 import "@openzeppelin/contracts/utils/Counters.sol";
 import "./IERC20.sol";
-import "hardhat/console.sol";
 
 contract Bridge {
     using Counters for Counters.Counter;
@@ -39,6 +38,7 @@ contract Bridge {
         address addr = ecrecover(hashMessage(message), v, r, s);
         require(receiver == addr, "wrong signature");
         nonceUsed[_nonce] = true;
+        token.mint(receiver, amount);
     }
 
     function hashMessage(bytes32 message) private pure returns(bytes32) {
