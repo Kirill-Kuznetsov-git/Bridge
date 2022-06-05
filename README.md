@@ -21,5 +21,5 @@ npx solhint 'contracts/**/*.sol' --fix
 
 ```shell
 npx swap --address <> --amount <> --network <goerli or binance>
-npx redeem --address <> --amount <> -r <> -s <> -v <> --network <goerli or binance>
+npx redeem --address <> --amount <> --nonce <> -r <> -s <> -v <> --network <goerli or binance>
 ```
